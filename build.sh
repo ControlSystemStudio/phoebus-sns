@@ -46,7 +46,8 @@ echo "VERSION: $VERSION"
 echo "============================================="
 
 java -version
-mvn -version
+ant  -version
+mvn  -version
 
 rm -f *.zip
 
