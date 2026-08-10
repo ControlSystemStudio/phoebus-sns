@@ -1,19 +1,34 @@
-# Needs parallel folders
-#    phoebus        -   common code
-#    phoebus-sns    -  SNS additions
+# Build all SNS CSS tools
 #
-# Start either in already checked out phoebus-sns folder
-# or some empty folder
+# Needs parallel folders checked out from git:
+#  phoebus                    Common code
+#  phoebus-sns                SNS additions
+#
+# Start `build.sh` in phoebus-sns
+#
+# Relies on:
+# /opt/apache-maven           Apache maven
+# /opt/apache-ant             Apache ant
+# /opt/jdk-25                 JDK used to build everything for all architectures
+# /opt/jdks/windows/jdk       JDK bundled with windows executable
+# /opt/jdks/mac/jdk           JDK bundled with old mac executable
+# /opt/jdks/mac-aarch64/jdk   JDK bundled with new mac executable
+# /opt/jdks/linux/jdk         JDK bundled with linux x86 executable
+#
+# When building on linux, /opt/jdk-25 and /opt/jdks/linux/jdk may be the same,
+# but they're kept different because we typically build with a recent
+# long term service LTS snapshop of the JDK,
+# creating class files that need AT LEAST that JDK,
+# yet already bundle and run a newer JDK.
+
 
 if [ -d product-sns ]
 then
     echo "Invoked in phoebus-sns"
     cd ../phoebus
 else
-    echo "Fetching sources"
-    git clone https://github.com/ControlSystemStudio/phoebus.git
-    git clone https://github.com/ControlSystemStudio/phoebus-sns.git
-    cd phoebus
+    echo "Must invoke in phoebus-sns"
+    exit
 fi
 
 PARENT_VERSION=`xpath -q -e '/project/version/text()'  ../phoebus/pom.xml`
@@ -92,6 +107,11 @@ URL='https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/product-sns-$(arc
 git checkout -- product-sns/settings.ini
 sh ../phoebus/app/update/mk_update_settings.sh $URL >> product-sns/settings.ini
 git diff product-sns/settings.ini
+
+# Build for all platforms
+# Main difference is the `javafx.platform` setting to pick the OS-specific JFX lib.
+# Use maven to get target platform, then tend to build with ant.
+# For test also build with maven for one of the platforms.
 
 echo "============================================="
 echo " Windows ------------------------------------"
