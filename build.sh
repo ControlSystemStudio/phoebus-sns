@@ -12,7 +12,7 @@ then
 else
     echo "Fetching sources"
     git clone https://github.com/ControlSystemStudio/phoebus.git
-    git clone https://github.com/kasemir/phoebus-sns.git
+    git clone https://github.com/ControlSystemStudio/phoebus-sns.git
     cd phoebus
 fi
 
