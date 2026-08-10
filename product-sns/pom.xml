@@ -260,7 +260,7 @@
             <phase>verify</phase>
             <configuration>
               <failOnError>true</failOnError>
-              <tasks>
+              <target>
                 <echo message="Copying doc/"/>
                 <ant antfile="build.xml" target="copy-doc"/>
                 <echo message="Adding dependencies to product"/>
@@ -281,7 +281,7 @@
                     <attribute name="Class-Path" value="${manifest-classpath}" />
                   </manifest>
                 </jar>
-              </tasks>
+              </target>
             </configuration>
             <goals>
               <goal>run</goal>
