@@ -8,7 +8,10 @@ Phoebus (https://github.com/ControlSystemStudio/phoebus) product for SNS
 
 ## Complete Build and Distribution with Documentation
 
-See `build.sh`
+`build.sh` builds all products for SNS,
+and the best way to understand the build process
+might be to read through the script and execute
+its commands one-by-one in a terminal.
 
 ## Build & Run with Maven
 ```
