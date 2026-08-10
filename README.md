@@ -6,10 +6,9 @@ Phoebus (https://github.com/ControlSystemStudio/phoebus) product for SNS
  * Site-specific `PVProposalProvider` (`SNSPVProposals`).
  * Distribution created by `ant dist` includes site-specific `settings.ini`
 
-## Requirements
- * Java 17 or higher
- * mvn 3 or ant
- * `( cd ..; git clone https://github.com/shroffk/phoebus.git )`
+## Complete Build and Distribution with Documentation
+
+See `build.sh`
 
 ## Build & Run with Maven
 ```
@@ -59,7 +58,3 @@ ant dist
  * Run with `-settings /path/to/phoebus-sns/product-sns/settings.ini` to use
    settings that will be included in distribution.
  
-
-## Complete Build and Distribution with Documentation
-
-See `build.sh`
