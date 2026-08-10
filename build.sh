@@ -1,3 +1,10 @@
+# Needs parallel folders
+#    phoebus        -   common code
+#    phoebus-sns    -  SNS additions
+#
+# Start either in already checked out phoebus-sns folder
+# or some empty folder
+
 if [ -d product-sns ]
 then
     echo "Invoked in phoebus-sns"
