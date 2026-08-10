@@ -1,4 +1,7 @@
-# Build all SNS CSS tools
+# Build all SNS CSS tools on Linux
+#
+# Can also build on Mac, but will try to run the Linux binaries
+# with `-help` to show that they're basically fine
 #
 # Needs parallel folders checked out from git:
 #  phoebus                    Common code
