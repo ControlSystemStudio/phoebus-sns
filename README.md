@@ -37,7 +37,7 @@ ant dist
    For already running IDE, use "File", "New", "Project from version control".
    Either way, add these:
    * https://github.com/ControlSystemStudio/phoebus
-   * https://github.com/kasemir/phoebus-sns
+   * https://github.com/ControlSystemStudio/phoebus-sns
    
    When prompted for configuration, select "Maven project".
    Pick "in this window" when prompted how to open.
