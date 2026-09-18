@@ -20,7 +20,7 @@
 #
 # When building on linux, /opt/jdk-25 and /opt/jdks/linux/jdk may be the same,
 # but they're kept different because we typically build with a recent
-# long term service LTS snapshop of the JDK,
+# long term service LTS snapshot of the JDK,
 # creating class files that need AT LEAST that JDK,
 # yet already bundle and run a newer JDK.
 
@@ -46,9 +46,11 @@ fi
 
 if [ -z "$WORKSPACE" ]
 then
+    # Get JAVA_HOME from environment, get version from git
     echo "Plain Linux setup"
     B=`git rev-parse --abbrev-ref HEAD`
 else
+    # Use locations on Jenkins host
     echo "Running under Jenkins"
     B=`echo $GIT_BRANCH | sed 's/.*\///'`
     M2_HOME=/opt/apache-maven
