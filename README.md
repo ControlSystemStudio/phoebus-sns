@@ -53,11 +53,3 @@ ant dist
     - Class `org.phoebus.product.Launcher`
     - Working directory `/path/to/phoebus-sns`
 
-## Develop with Eclipse
- * Import Generic phoebus projects as described in ../phoebus/README.md
- * Import phoebus-sns project (one project)
- * After running the generic "Launcher" once, edit the run configuration
-   to add the "phoebus-sns" Project to the Dependencies/Classpath Entries.
- * Run with `-settings /path/to/phoebus-sns/product-sns/settings.ini` to use
-   settings that will be included in distribution.
- 
